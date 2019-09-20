@@ -1,0 +1,10 @@
+title 0.6: uusi muistiinpano (SPA)
+
+Selain->Palvelin: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+note over Palvelin:
+uusi note luodaan
+end note
+Palvelin->Selain: {"message":"note created"}
+note over Selain:
+Tehty note lisätään listaan (paikallisesta tilasta)
+end note

@@ -1,0 +1,11 @@
+0.4
+title 0.4: uusi muistiinpano
+
+Selain->Palvelin: POST https://fullstack-exampleapp.herokuapp.com/new_note
+note over Palvelin:
+uusi note luodaan
+end note
+Palvelin->Selain: 302 Found
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/notes
+Palvelin->Selain: html-koodi
+
