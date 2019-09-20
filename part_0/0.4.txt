@@ -1,11 +1,25 @@
-0.4
 title 0.4: uusi muistiinpano
 
-Selain->Palvelin: POST https://fullstack-exampleapp.herokuapp.com/new_note
-note over Palvelin:
+selain->palvelin: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+note over palvelin:
 uusi note luodaan
 end note
-Palvelin->Selain: 302 Found
-Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/notes
-Palvelin->Selain: html-koodi
+palvelin->selain: 302 Found
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+palvelin-->selain: HTML-koodi
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+palvelin-->selain: main.css
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa.js
+palvelin-->selain: spa.js
+note over selain:
+selain alkaa suorittaa js-koodia
+joka pyytää JSON-datan palvelimelta
+end note
 
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+palvelin-->selain: [{ content: "HTML on helppoa", date: "2019-01-01" }, ...]
+
+note over selain:
+selain suorittaa tapahtumankäsittelijän
+joka renderöi muistiinpanot näytölle
+end note
